@@ -1,0 +1,61 @@
+#common ignore
+.idea/
+.svn/
+*.iml
+.settings/
+.classpath
+.project
+/lib/
+/logs/
+.mvn/
+.vs/
+node_modules/
+settings.gradle
+
+#java files ignore
+*.class
+# Package Files #
+*.war
+*.ear
+*.zip
+hs_err_pid*
+
+#maven ignore
+build/
+bin/
+obj/
+test-build/
+target/
+src/main/webapp/WEB-INF/classes/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# Exclude maven wrapper
+!/.mvn/wrapper/maven-wrapper.jar
+
+#gradle ignore
+.gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+
+### OS generated files ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+##vs code files
+.factorypath
+.vscode

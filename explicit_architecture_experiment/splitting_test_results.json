@@ -1,0 +1,68 @@
+{
+  "analysis": {
+    "total_files": 5,
+    "successful_splits": 5,
+    "failed_splits": 0,
+    "success_rate": 100.0,
+    "average_prefix_ratio": 27.01477628086463,
+    "average_suffix_ratio": 72.98522371913536,
+    "failed_reasons": {}
+  },
+  "detailed_results": [
+    {
+      "file": "data_generation/direct_data_builder.py",
+      "success": true,
+      "lines": 598,
+      "prefix_length": 2907,
+      "suffix_length": 16084,
+      "prefix_ratio": 15.307250803011954,
+      "suffix_ratio": 84.69274919698805,
+      "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\ndirect_data_builder.py\n----------------------------------------------------\n直接数据构建脚本 - 用于处理单个项目\n\n功能：\n1. 直接处理单个项目（MVC或显性架构）\n2. 生成函数补全任务样本\n3. 计算函数间耦合度指...",
+      "suffix_preview": "            try:\n                splitter = get_code_splitter(language)\n                result = splitter.split_code(lines)\n                \n                if result:\n                    prefix, suff..."
+    },
+    {
+      "file": "training/finetune.py",
+      "success": true,
+      "lines": 419,
+      "prefix_length": 2386,
+      "suffix_length": 10835,
+      "prefix_ratio": 18.047046365630436,
+      "suffix_ratio": 81.95295363436956,
+      "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\nfinetune.py\n----------------------------------------------------\n显性架构实验模型微调脚本\n\n功能：\n1. 加载预训练模型和tokenizer\n2. 准备训练数据（显性/非显性架构样本）\n3. 微调模型用于函数补全任务\n4. 支持多种...",
+      "suffix_preview": "        elif data_path.endswith('.json'):\n            with open(data_path, 'r', encoding='utf-8') as f:\n                data = json.load(f)\n        return data\n    \n    def __len__(self):\n        retu..."
+    },
+    {
+      "file": "data_generation/parsers/python_ast_parser.py",
+      "success": true,
+      "lines": 254,
+      "prefix_length": 1842,
+      "suffix_length": 5458,
+      "prefix_ratio": 25.232876712328768,
+      "suffix_ratio": 74.76712328767124,
+      "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\npython_ast_parser.py\n----------------------------------------------------\nPython AST解析器\n\n功能：\n1. 使用标准库ast进行Python代码解析\n2. 提取类、函数、导入等信息\n3. 计算复杂度指标\n\n依赖：\n...",
+      "suffix_preview": "    def _extract_imports(self, tree: ast.AST) -> List[str]:\n        \"\"\"提取导入语句\"\"\"\n        imports = []\n        \n        for node in ast.walk(tree):\n            if isinstance(node, ast.Import):\n        ..."
+    },
+    {
+      "file": "evaluation/eval_pipeline.py",
+      "success": true,
+      "lines": 447,
+      "prefix_length": 2361,
+      "suffix_length": 13130,
+      "prefix_ratio": 15.241107739978052,
+      "suffix_ratio": 84.75889226002195,
+      "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\neval_pipeline.py\n----------------------------------------------------\n显性架构实验评估管道\n\n功能：\n1. 加载微调后的模型\n2. 对测试集进行推理\n3. 计算多种评估指标\n4. 生成详细的评估报告\n\n依赖：\n    pip i...",
+      "suffix_preview": "        if not input_text or len(input_text.strip()) == 0:\n            return \"\"\n        \n        # Tokenize输入\n        inputs = self.tokenizer(\n            input_text,\n            return_tensors=\"pt\",..."
+    },
+    {
+      "file": "analysis/generate_report.py",
+      "success": true,
+      "lines": 500,
+      "prefix_length": 11309,
+      "suffix_length": 7156,
+      "prefix_ratio": 61.24559978337395,
+      "suffix_ratio": 38.75440021662605,
+      "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\ngenerate_report.py\n----------------------------------------------------\n实验报告生成器\n\n功能：\n1. 整合所有实验结果\n2. 生成综合分析报告\n3. 输出可视化图表\n4. 生成结论和建议\n\n依赖：\n    pip insta...",
+      "suffix_preview": "    def _create_performance_comparison_chart(self, report: Dict[str, Any]):\n        \"\"\"创建性能对比图\"\"\"\n        if 'performance_analysis' not in report:\n            return\n        \n        performance = rep..."
+    }
+  ]
+}

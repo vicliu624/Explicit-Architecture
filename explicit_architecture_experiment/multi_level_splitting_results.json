@@ -1,0 +1,73 @@
+{
+  "analysis": {
+    "total_files": 3,
+    "successful_splits": 3,
+    "failed_splits": 0,
+    "success_rate": 100.0,
+    "avg_split_count": 1.0,
+    "total_split_count": 3,
+    "level_distribution": {
+      "file": 3
+    },
+    "failed_reasons": {}
+  },
+  "detailed_results": [
+    {
+      "file": "data_generation/direct_data_builder.py",
+      "success": true,
+      "lines": 598,
+      "split_count": 1,
+      "splits": [
+        {
+          "level": "file",
+          "description": "File-level split",
+          "split_type": "balanced",
+          "prefix_length": 959,
+          "suffix_length": 18032,
+          "prefix_ratio": 5.049760412827128,
+          "suffix_ratio": 94.95023958717287,
+          "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\ndirect_data_builder.py\n----------------------------------------------------\n直接数据构建脚本 - 用于处理单个项目\n\n功能：\n1. 直接处理单个项目（MVC或显性架构）\n2. 生成函数补全任务样本\n3. 计算函数间耦合度指...",
+          "suffix_preview": "    from code_splitters import get_code_splitter, get_supported_languages\n    from parsers import get_parser as get_ast_parser\n\n# 设置中文字体\nplt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei']..."
+        }
+      ]
+    },
+    {
+      "file": "training/finetune.py",
+      "success": true,
+      "lines": 419,
+      "split_count": 1,
+      "splits": [
+        {
+          "level": "file",
+          "description": "File-level split",
+          "split_type": "balanced",
+          "prefix_length": 884,
+          "suffix_length": 12337,
+          "prefix_ratio": 6.686332350049164,
+          "suffix_ratio": 93.31366764995084,
+          "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\nfinetune.py\n----------------------------------------------------\n显性架构实验模型微调脚本\n\n功能：\n1. 加载预训练模型和tokenizer\n2. 准备训练数据（显性/非显性架构样本）\n3. 微调模型用于函数补全任务\n4. 支持多种...",
+          "suffix_preview": "    \"\"\"模型配置\"\"\"\n    model_name_or_path: str = \"gpt2\"\n    output_dir: str = \"./outputs/finetune\"\n    train_file: str = \"./data/tasks/train.jsonl\"\n    validation_file: str = \"./data/tasks/val.jsonl\"\n    ..."
+        }
+      ]
+    },
+    {
+      "file": "data_generation/parsers/python_ast_parser.py",
+      "success": true,
+      "lines": 254,
+      "split_count": 1,
+      "splits": [
+        {
+          "level": "file",
+          "description": "File-level split",
+          "split_type": "balanced",
+          "prefix_length": 230,
+          "suffix_length": 7070,
+          "prefix_ratio": 3.1506849315068495,
+          "suffix_ratio": 96.84931506849314,
+          "prefix_preview": "#!/usr/bin/env python3\n# -*- coding: utf-8 -*-\n\"\"\"\npython_ast_parser.py\n----------------------------------------------------\nPython AST解析器\n\n功能：\n1. 使用标准库ast进行Python代码解析\n2. 提取类、函数、导入等信息\n3. 计算复杂度指标\n\n依赖：\n...",
+          "suffix_preview": "----------------------------------------------------\n\"\"\"\n\nimport ast\nimport os\nfrom typing import List, Dict, Optional\n\n\nclass PythonASTParser:\n    \"\"\"Python AST解析器\"\"\"\n    \n    def __init__(self):\n   ..."
+        }
+      ]
+    }
+  ]
+}
