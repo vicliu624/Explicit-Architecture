@@ -1,7 +1,7 @@
 #common ignore
 .idea/
-tree-sitter/
-java-tree-sitter/
+tree-sitter/.git
+java-tree-sitter/.git
 .svn/
 *.iml
 .settings/
