@@ -1102,6 +1102,115 @@ Maintaining openness, plasticity, and semantic continuity in the temporal dimens
 
 ## Chapter 1: Everything Begins with Distinction
 
+Before discussing distinction, let me first enumerate several philosophical concepts:
+
+- **Pre-differentiated Experience**: Before any system is modeled, before any requirements are proposed, the world first presents itself to us in an **undifferentiated manner**. Events, objects, relationships, rules—all mixed together, without boundaries, without categories, without meaning. This state is not an abstract philosophical assumption, but our most direct experience when facing unfamiliar domains, chaotic business, or rapidly changing scenarios: **everything is happening, but we don't know what they "are."**
+
+- **The Given (Chaos)**: The world does not wait for us to sort things out before it begins to operate. It presses upon us with a "given" posture: business processes are running, data is flowing, customers are making demands, organizations are making decisions. What we face is not a clear problem, but a holistic chaos—a reality that is unscreened, unabstracted, undefined. This is "the given": **it is not what we choose, but what we must face.**
+
+- **Existential Pressure**: In the face of undifferentiated experience, we are not neutral observers. As actors, we are always driven by some force: achieving goals, avoiding failure, reducing risk, completing delivery, making decisions. These forces constitute the basic pressure in our relationship with the world:
+
+  - Tasks must advance
+  - Systems must run
+  - Resources must be allocated
+  - Decisions must be implemented
+
+  Therefore, even if we haven't understood the world, we **must** react to it. This is existential pressure.
+
+- **Situated Anxiety**: When the world is chaotic and action cannot stop, we naturally feel a situational anxiety:
+
+  - What am I actually dealing with?
+  - Which factors are key, which are just noise?
+  - What is the current system's "true object"?
+  - Where should I start?
+
+  This is not anxiety in the psychological sense, but a "structural anxiety": something is forcing us to make the world understandable and operable.
+
+- **Attentional Compulsion**: Under this existential pressure and situational anxiety, our attention is not free; it is "compulsively" directed by reality toward those factors that are most urgent, most critical, and most decisive for action success or failure. This "directedness of attention" means: the world acts on us first. It makes certain things prominent, urgent, impossible to ignore.
+
+  For example, in a logistics system:
+
+  - Packages are more urgent than warehouses
+  - Timeliness is prioritized over weight
+  - Waybills "protrude" before warehouse networks
+
+  These are not what we "chose," but what the business world actively "presses out."
+
+Thus, when the world presses upon us as chaos, and attention is forced to focus on certain phenomena, we naturally produce a response:
+
+> **We must cut the world apart.**
+
+Distinction is the first action of this response. It is not a pure philosophical activity, nor the result of rational reasoning, but a necessity of action: to continue living, working, and designing systems, we must cut chaos into "things."
+
+- What is this?
+- How is it different from what?
+- Where are its boundaries?
+
+Distinction turns chaos into processable fragments.
+
+> "True system design does not begin with choosing frameworks, but with the first distinction of the world."
+
+Compared to requirements analysis and problem definition, "distinction—interpretation" is **more prior and more original** in cognitive order. Any "requirement" or "problem" carries structure, and the premise of structure is **first drawing what is an object and what is not**. Before asking "what is the requirement," you must first distinguish "which things in the world are worth describing." **Requirements do not arise from nothing; they are based on 'distinguished objects.'** So epistemologically, "distinction" is a prerequisite for requirements analysis. At the logical level, "problems" do not exist naturally. They are formed after we divide things from chaos and assign relationships. In other words: **"Problem" = an interpretive structure built upon established distinctions.** At the engineering practice level, requirements change, problems change, but once domain boundaries (distinctions) are determined, they become almost the entire system's skeleton. Distinction is more stable and fundamental than requirements and problems, because the entire semantic space and evolvability of the system come from the world structure set by distinction. When you can't find the problem, you still have object concepts; when requirements change, you still retain domain boundaries. Distinction is more fundamental than requirements because it constitutes the "semantic infrastructure" that allows requirements to be overturned without destroying the system. **Therefore, distinction is the most original "foundation." Requirements analysis is not the foundation; it is a process built upon interpretive structures, serving to solve "existing problems."**
+
+If there is no distinction, the world cannot enter system design. When we place "distinction" before requirements and problems, it is not for philosophical showmanship, but because without distinction, all subsequent practices will fall into fundamental failure. Suppose there is no distinction:
+
+- **Requirements cannot be expressed**:
+  Requirements at least need a structure of "acting upon objects," such as "user places order," "package enters warehouse," "driver accepts order."
+  Without prior object boundaries, "requirements" can only become vague emotional sentences, such as "improve efficiency" or "automate some processes."
+- **Problems cannot be defined**:
+  A "problem" at least contains:
+  ① Objects
+  ② Relationships between objects
+  ③ States or changes of objects
+  Without distinction, there are no definable problems, only a mass of emotional complaints: "the system is too chaotic," "the process is too complex."
+- **Solutions cannot be derived**:
+  Engineering solutions must depend on "distinguished things."
+  Without objects, there are no models;
+  Without models, there is no behavior;
+  Without boundaries, there are no logical anchor points.
+- **Teams cannot reach consensus**:
+  Teams will argue endlessly about "what exactly is an object":
+  "Is package the core?"
+  "Is order more important?"
+  "Does user count as an object?"
+  Without prior consensus on distinction, requirements reviews will forever be like groping in the dark.
+- **Systems cannot evolve**:
+  System evolvability depends on the stability of object boundaries.
+  Requirements change frequently, but once object boundaries are determined, their stability far exceeds fluctuations at the requirements level.
+  Without distinction, architecture has no skeleton, and systems will only collapse as requirements change.
+
+Why is distinction the most fundamental cognitive action? There is a key point behind this: **Requirements and problems are not inherent to the world, but constructive.**
+
+People think requirements are the starting point because requirements documents are always the first materials in a project. But from an epistemological perspective, requirements documents are actually products of teams collectively completing "distinction—interpretation," not their prerequisite. This can be expressed as:
+
+> **Distinction determines "what things exist"; interpretation determines "how they relate"; requirements are merely "action intentions within established interpretive structures."**
+
+That is:
+
+- Requirements are second-order structures (based on interpretation).
+- Interpretation is the structuration of distinction (based on distinction).
+- Distinction is the first response to undifferentiated experience (based on the given chaos).
+
+This is why:
+
+- Requirements can change at any time in a project;
+- Problems can be redefined;
+- Modules can be rewritten;
+
+But as long as distinction remains unchanged (e.g., the basic objects of a logistics system remain packages, waybills, stations, routes), the entire system remains understandable, maintainable, and evolvable.
+
+Whether we discuss requirements, problems, models, or architecture, they all assume a premise: **the world has already been cut into identifiable, describable fragments.** Only when this holds can all other engineering activities unfold. Therefore:
+
+- Distinction is the prerequisite for requirements;
+- Distinction is the prerequisite for problematization;
+- Distinction is the prerequisite for modeling;
+- Distinction is the prerequisite for architecture;
+- Distinction is the prerequisite for system evolvability.
+
+Distinction is not the first step in describing systems; **distinction is the prerequisite condition for systems to be describable.** This is why:
+
+> Everything begins with distinction.
+
 ### 1.1. The Essence of Software: A Neglected Question
 
 In the history of software engineering, we repeatedly fall into the trap of "**tool-first**":
