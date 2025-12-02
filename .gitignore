@@ -39,7 +39,8 @@ buildNumber.properties
 .mvn/timing.properties
 # Exclude maven wrapper
 !/.mvn/wrapper/maven-wrapper.jar
-
+explicit_architecture_experiment/.cache
+explicit_architecture_experiment/out
 #gradle ignore
 .gradle
 /build/
