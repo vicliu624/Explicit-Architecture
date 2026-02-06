@@ -1,56 +1,14 @@
-from dataclasses import dataclass
-from typing import Dict, List, Optional
+"""
+数据模型定义（新思路：直接从 Transformer 提取指标）。
 
-import numpy as np
+不再依赖 AST、调用图、JSON 中间文件。
+所有指标直接从 Transformer 内部机制提取。
 
-
-@dataclass
-class ModuleRecord:
-    """
-    单个模块（通常为一个类）的信息。
-
-    Attributes
-    ----------
-    id:
-        模块唯一标识，建议使用 fully-qualified class 名
-        （例如 "com.example.user.UserService"）。
-    text:
-        用于词汇与语义表示的文本：
-        - 类名 / 方法名 / 参数名
-        - Javadoc / 注释
-        - 其他你认为有用的字符串
-    deps:
-        结构依赖信息：
-        edge_type -> { target_module_id -> count }
-        例如:
-        {
-            "call":   {"com.example.repo.UserRepo": 12},
-            "field":  {"com.example.model.User": 3},
-            "inherit":{"com.example.base.BaseService": 1}
-        }
-    embedding:
-        可选：预先计算好的语义向量（如 CodeBERT / GraphCodeBERT）。
-        若为空，可在 Python 侧通过 sentence-transformers 计算。
+新方法不需要复杂的数据模型，直接使用 numpy 数组和列表即可。
+保留此文件仅用于未来可能的扩展。
     """
 
-    id: str
-    text: str
-    deps: Dict[str, Dict[str, int]]
-    embedding: Optional[List[float]] = None
-
-
-@dataclass
-class SCMatrices:
-    """
-    语义耦合度相关矩阵。
-
-    所有矩阵的行列顺序均与 `modules` 一致。
-    """
-
-    modules: List[str]
-    S_struct: np.ndarray  # 结构耦合矩阵
-    S_lex: np.ndarray     # 词汇耦合矩阵
-    S_sem: np.ndarray     # 语义相似度矩阵
-    SC: np.ndarray        # 综合语义耦合矩阵
-
-
+# 新方法直接使用：
+# - List[str]: 模块 ID 列表
+# - np.ndarray: 耦合矩阵
+# - Dict: 临时数据结构

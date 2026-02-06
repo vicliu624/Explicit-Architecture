@@ -50,7 +50,7 @@ public final class ProjectScanner {
                         // 以避免编码问题。
                         String code = Files.readString(p, StandardCharsets.UTF_8);
                         CompilationUnit cu = StaticJavaParser.parse(code);
-                        scanCompilationUnit(cu, modules);
+                        scanCompilationUnit(cu, code, modules);
                     } catch (Exception e) {
                         System.err.println("Failed to parse " + p + ": " + e.getMessage());
                     }
@@ -59,10 +59,23 @@ public final class ProjectScanner {
         return modules;
     }
 
-    private static void scanCompilationUnit(CompilationUnit cu, List<ModuleRecord> modules) {
+    private static void scanCompilationUnit(CompilationUnit cu, String sourceCode, List<ModuleRecord> modules) {
         String pkg = cu.getPackageDeclaration()
                 .map(pd -> pd.getNameAsString())
                 .orElse("");
+
+        // 计算文件总行数和注释行数
+        String[] lines = sourceCode.split("\n");
+        final int totalLines = lines.length;
+        int commentLinesCount = 0;
+        for (String line : lines) {
+            String trimmed = line.trim();
+            if (trimmed.startsWith("//") || trimmed.startsWith("/*") || trimmed.startsWith("*")) {
+                commentLinesCount++;
+            }
+        }
+        // 也统计块注释
+        final int commentLines = commentLinesCount + cu.getAllContainedComments().size();
 
         // 静态 import 对应的类型（粗略版：去掉最后一节方法 / 字段名）
         List<String> staticImportTypes = new ArrayList<>();
@@ -100,8 +113,11 @@ public final class ProjectScanner {
                 text.append(javadoc).append(' ');
             });
             
+            // 统计字段数
+            int fieldCount = 0;
             // 字段：名称 + 类型
             for (FieldDeclaration field : cls.getFields()) {
+                fieldCount += field.getVariables().size();
                 // 字段类型
                 text.append(field.getElementType().asString()).append(' ');
                 // 字段名称
@@ -116,6 +132,8 @@ public final class ProjectScanner {
                 });
             }
             
+            // 统计方法数
+            int methodCount = cls.getMethods().size();
             // 方法：名称 + 返回类型 + 参数类型 + 参数名 + Javadoc
             for (MethodDeclaration m : cls.getMethods()) {
                 // 方法名
@@ -149,6 +167,11 @@ public final class ProjectScanner {
             });
 
             ModuleRecord mr = new ModuleRecord(id, text.toString());
+            
+            // 设置模块规模特征
+            mr.methodCount = methodCount;
+            mr.fieldCount = fieldCount;
+            mr.setLineMetrics(totalLines, commentLines);
 
             // inherit: extends / implements
             cls.getExtendedTypes().forEach(t -> {
