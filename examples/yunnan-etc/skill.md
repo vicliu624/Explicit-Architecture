@@ -4,10 +4,6 @@
 
 ## 章首引句
 
-**English**
-*And hence also “obeying a rule” is a practice.*
-
-**中文**
 **因此，“遵循规则”本身也是一种实践。**
 
 ---
